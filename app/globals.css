@@ -27,15 +27,15 @@ body {
 }
 
 .home-content {
-  display: flex;
+  display: grid;
   width: 100%;
-  max-width: 48rem;
+  max-width: 76rem;
   flex: 1;
-  flex-direction: column;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr);
   align-items: center;
-  justify-content: space-between;
+  gap: clamp(3rem, 7vw, 7rem);
   /* background: #FAF8F5; */
-  padding: 8rem 4rem;
+  padding: 4rem;
 }
 
 .next-logo {
@@ -58,9 +58,9 @@ body {
 }
 
 .intro-title {
-  max-width: 20rem;
+  max-width: 25rem;
   color: #2C2825;
-  font-size: 1.875rem;
+  font-size: 2.875rem;
   font-weight: 600;
   line-height: 2.5rem;
   letter-spacing: -0.025em;
@@ -75,10 +75,30 @@ body {
 }
 
 .intro-copy {
-  max-width: 28rem;
+  max-width: 30rem;
   color: #2C2825;
   font-size: 1.125rem;
   line-height: 2rem;
+}
+
+.intro-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.intro-image-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5% 5% 5% 5%;
+  box-shadow: 0 1.5rem 3rem rgb(44 40 37 / 14%);
+}
+
+.intro-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 
 .text-link {
@@ -156,6 +176,22 @@ body {
 .site-title:hover {
   color: #A87B74;
 }
+
+
+/* FOOTER STYLES */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 4rem;
+  color: #2c2825;
+  font-size: clamp(0.7rem, 5vw, 0.9rem);
+}
+
+/* BOOKING BUTTON STYLES */
 
 .booking-trigger,
 .booking-submit {
@@ -284,6 +320,17 @@ body {
 }
 
 @media (max-width: 767px) {
+  .home-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 1rem;
+  }
+
+  .intro-image-wrap {
+    max-width: 28rem;
+    justify-self: center;
+  }
+
   .site-header {
     display: flex;
     flex-wrap: wrap;
