@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
     const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -29,9 +30,9 @@ export default function Header() {
     return (
         <>
             <header className="site-header">
-                <a className="site-title" href="/" aria-label="Maryna Salamatina Cosmetology home">
+                <Link className="site-title" href="/" aria-label="Maryna Salamatina Cosmetology home">
                     Maryna Salamatina
-                </a>
+                </Link>
 
                 <nav className="site-nav" aria-label="Main navigation">
                     <a href="#about">About</a>
@@ -39,6 +40,7 @@ export default function Header() {
                     <a href="#results">Results</a>
                     <a href="#faq">FAQ</a>
                     <a href="#contact">Contact</a>
+                    <Link href="/account">Sign in</Link>
                 </nav>
 
                 <button className="booking-trigger" type="button" onClick={openBooking}>
