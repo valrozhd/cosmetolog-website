@@ -83,7 +83,28 @@ body {
 
 .intro-actions {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 12px;
+}
+
+.services-trigger {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(104 68 62 / 35%);
+  border-radius: 9999px;
+  color: #68443e;
+  font-weight: 600;
+  padding: 0 1.25rem;
+  text-decoration: none;
+  transition: background-color 150ms, transform 150ms;
+}
+
+.services-trigger:hover {
+  transform: translateY(-1px);
+  background: #f1e9e5;
 }
 
 .intro-image-wrap {
@@ -99,6 +120,76 @@ body {
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+}
+
+.public-services {
+  width: min(100% - 2rem, 72rem);
+  align-self: center;
+  padding: 3rem 0 5rem;
+}
+
+.public-services-heading {
+  max-width: 39rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.public-services-heading h2 {
+  color: #51332e;
+  font-family: var(--font-lora), serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 500;
+}
+
+.public-services-heading > p:last-child {
+  margin-top: 0.7rem;
+  color: #6b625c;
+  line-height: 1.6;
+}
+
+.public-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.public-service-card {
+  display: flex;
+  min-height: 13rem;
+  flex-direction: column;
+  border: 1px solid rgb(44 40 37 / 12%);
+  background: #fffdfa;
+  padding: 1.5rem;
+}
+
+.public-service-card h3 {
+  color: #51332e;
+  font-family: var(--font-lora), serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.public-service-card > p {
+  margin-top: 0.7rem;
+  color: #6b625c;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.public-service-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  color: #68443e;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.public-services-empty {
+  color: #746b66;
+  text-align: center;
 }
 
 .text-link {
@@ -570,9 +661,542 @@ footer {
   line-height: 1.5;
 }
 
+.account-test-credentials {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: 1.5rem;
+  border: 1px solid rgb(168 123 116 / 28%);
+  background: #f5efeb;
+  color: #68443e;
+  font-size: 0.8rem;
+  padding: 0.9rem 1rem;
+}
+
+.account-test-credentials p {
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
 .account-signed-in .account-submit {
   width: 100%;
   margin-top: 1.5rem;
+}
+
+.master-dashboard {
+  width: min(100% - 2.5rem, 80rem);
+  align-self: center;
+  padding: 2rem 0 4rem;
+}
+
+.master-dashboard-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.master-dashboard-heading h1 {
+  color: #51332e;
+  font-family: var(--font-lora), serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.master-tabs {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  border-bottom: 1px solid rgb(44 40 37 / 14%);
+}
+
+.master-tab {
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: #746b66;
+  cursor: pointer;
+  font: inherit;
+  padding: 0.8rem 0.2rem;
+}
+
+.master-tab.is-active {
+  border-bottom-color: #a87b74;
+  color: #51332e;
+  font-weight: 700;
+}
+
+.master-tab-panel {
+  padding-top: 1.5rem;
+}
+
+.master-schedule-heading h2,
+.master-services-settings h2 {
+  color: #51332e;
+  font-family: var(--font-lora), serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+}
+
+.master-schedule-heading > div > p:last-child {
+  max-width: 42rem;
+}
+
+.master-week-range {
+  margin-top: 0.6rem;
+  color: #746b66;
+}
+
+.master-sign-out {
+  min-height: 2.8rem;
+  border: 1px solid rgb(104 68 62 / 35%);
+  border-radius: 9999px;
+  background: transparent;
+  color: #68443e;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.6rem 1.2rem;
+}
+
+.master-sign-out:hover {
+  background: #f1e9e5;
+}
+
+.master-schedule-summary {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0 1.25rem;
+}
+
+.master-schedule-summary div {
+  display: grid;
+  min-width: 11rem;
+  gap: 0.25rem;
+  border: 1px solid rgb(44 40 37 / 10%);
+  background: #fffdfa;
+  padding: 1rem 1.25rem;
+}
+
+.master-schedule-summary strong {
+  color: #68443e;
+  font-family: var(--font-lora), serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.master-schedule-summary span {
+  color: #746b66;
+  font-size: 0.8rem;
+}
+
+.master-week-scroll {
+  overflow-x: auto;
+}
+
+.master-week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(8.5rem, 1fr));
+  min-width: 70rem;
+  border-top: 1px solid rgb(44 40 37 / 14%);
+  border-left: 1px solid rgb(44 40 37 / 14%);
+}
+
+.master-day {
+  min-height: 17rem;
+  border-right: 1px solid rgb(44 40 37 / 14%);
+  border-bottom: 1px solid rgb(44 40 37 / 14%);
+  background: #fffdfa;
+}
+
+.master-day.is-today {
+  background: #f8f1ed;
+}
+
+.master-day-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(44 40 37 / 10%);
+  color: #746b66;
+  padding: 0.8rem;
+}
+
+.master-day-heading span {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.master-day-heading strong {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 50%;
+  color: #51332e;
+}
+
+.master-day.is-today .master-day-heading strong {
+  background: #a87b74;
+  color: #fff;
+}
+
+.master-day-appointments {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  padding: 0.65rem;
+}
+
+.master-appointment {
+  display: grid;
+  gap: 0.2rem;
+  border-left: 2px solid #a87b74;
+  background: #f5efeb;
+  padding: 0.55rem;
+}
+
+.master-appointment time {
+  color: #68443e;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.master-appointment strong {
+  color: #3e3834;
+  font-size: 0.8rem;
+}
+
+.master-appointment span,
+.master-day-empty,
+.master-schedule-note {
+  color: #817873;
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.master-schedule-note {
+  margin-top: 0.9rem;
+  font-size: 0.8rem;
+}
+
+.master-services-settings > .master-schedule-heading {
+  margin-bottom: 1.5rem;
+}
+
+.master-services-layout {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.master-services-list,
+.master-service-overview {
+  border: 1px solid rgb(44 40 37 / 12%);
+  background: #fffdfa;
+  padding: 1.25rem;
+}
+
+.master-services-list h3,
+.master-service-form h3,
+.master-service-detail h3 {
+  color: #51332e;
+  font-family: var(--font-lora), serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.master-service-dropdowns {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.master-service-dropdown {
+  display: flex;
+  width: 100%;
+  min-height: 3.2rem;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid rgb(44 40 37 / 12%);
+  background: #fffdfa;
+  color: #3e3834;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+}
+
+.master-service-dropdown:hover,
+.master-service-dropdown.is-selected {
+  border-color: rgb(168 123 116 / 55%);
+  background: #f8f1ed;
+}
+
+.master-service-dropdown > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.master-service-dropdown svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  margin-left: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.master-service-sample-tag {
+  flex: 0 0 auto;
+  border-radius: 9999px;
+  background: #f1e9e5;
+  color: #68443e;
+  font-size: 0.68rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.master-service-empty,
+.master-service-placeholder {
+  color: #817873;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.master-service-empty {
+  margin-top: 1rem;
+}
+
+.master-add-service {
+  width: 100%;
+  min-height: 2.8rem;
+  margin-top: 1rem;
+  border: 1px dashed rgb(104 68 62 / 42%);
+  background: transparent;
+  color: #68443e;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.master-add-service:hover:not(:disabled) {
+  background: #f8f1ed;
+}
+
+.master-add-service:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.master-service-overview {
+  min-height: 16rem;
+}
+
+.master-service-detail-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.master-service-detail-heading .account-eyebrow {
+  margin-bottom: 0.4rem;
+}
+
+.master-service-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.5rem;
+}
+
+.master-service-visibility,
+.master-service-edit {
+  display: grid;
+  width: 2.65rem;
+  height: 2.65rem;
+  place-items: center;
+  border: 1px solid rgb(44 40 37 / 16%);
+  border-radius: 50%;
+  background: #f1e9e5;
+  color: #201d1b;
+  cursor: pointer;
+}
+
+.master-service-visibility.is-visible {
+  border-color: #a87b74;
+  background: #a87b74;
+  color: #fff;
+}
+
+.master-service-visibility:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.master-service-edit {
+  background: #fffdfa;
+  color: #68443e;
+}
+
+.master-service-visibility svg,
+.master-service-edit svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.master-service-visibility svg circle {
+  fill: currentColor;
+  stroke: none;
+}
+
+.master-service-sample-warning,
+.master-service-error {
+  margin-top: 1rem;
+  color: #8a4c24;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.master-service-description {
+  margin-top: 1.25rem;
+  color: #6b625c;
+  line-height: 1.6;
+}
+
+.master-service-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgb(44 40 37 / 10%);
+  border-bottom: 1px solid rgb(44 40 37 / 10%);
+  padding: 1rem 0;
+}
+
+.master-service-meta div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.master-service-meta dt,
+.master-service-notes h4 {
+  color: #817873;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.master-service-meta dd {
+  color: #51332e;
+  font-weight: 700;
+}
+
+.master-service-notes {
+  margin-top: 1.25rem;
+}
+
+.master-service-notes p {
+  margin-top: 0.4rem;
+  color: #6b625c;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.master-service-visibility-status {
+  margin-top: 1.25rem;
+  color: #746b66;
+  font-size: 0.8rem;
+}
+
+.master-service-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.master-service-field {
+  display: grid;
+  gap: 0.4rem;
+  color: #3e3834;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.master-service-field input,
+.master-service-field textarea {
+  width: 100%;
+  border: 1px solid rgb(44 40 37 / 19%);
+  border-radius: 0.25rem;
+  background: #fffdfa;
+  color: #2c2825;
+  font: inherit;
+  font-weight: 400;
+  padding: 0.7rem 0.75rem;
+}
+
+.master-service-field textarea {
+  resize: vertical;
+}
+
+.master-service-field input:focus,
+.master-service-field textarea:focus {
+  border-color: #a87b74;
+  outline: 2px solid rgb(168 123 116 / 20%);
+}
+
+.master-service-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.master-service-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.master-service-save,
+.master-service-cancel {
+  min-height: 2.8rem;
+  border: 0;
+  border-radius: 9999px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.6rem 1.2rem;
+}
+
+.master-service-save {
+  background: #a87b74;
+  color: #fff;
+}
+
+.master-service-save:hover {
+  background: #8f635c;
+}
+
+.master-service-cancel {
+  background: #f1e9e5;
+  color: #68443e;
+}
+
+.master-service-error {
+  margin-bottom: 1rem;
+  color: #a13d35;
+}
+
+.master-service-error + .master-add-service {
+  margin-top: 0;
 }
 
 .account-story {
@@ -616,6 +1240,10 @@ footer {
 }
 
 @media (max-width: 760px) {
+  .public-services-grid {
+    grid-template-columns: 1fr;
+  }
+
   .account-layout {
     width: min(100% - 2rem, 34rem);
     grid-template-columns: 1fr;
@@ -624,6 +1252,14 @@ footer {
 
   .account-story {
     min-height: 18rem;
+  }
+
+  .master-dashboard {
+    width: min(100% - 2rem, 34rem);
+  }
+
+  .master-services-layout {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -638,5 +1274,13 @@ footer {
 
   .account-story {
     min-height: 14rem;
+  }
+
+  .master-dashboard-heading {
+    align-items: flex-start;
+  }
+
+  .master-service-form-row {
+    grid-template-columns: 1fr;
   }
 }

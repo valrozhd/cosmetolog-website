@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "./components/Header";
+import PublicServices from "./components/PublicServices";
 
 export default function Home() {
   return (
@@ -21,9 +22,9 @@ export default function Home() {
               Book an appointment
             </button>
 
-            <button className="services-trigger" type="button">
+            <a className="services-trigger" href="#services">
               View services
-            </button>
+            </a>
           </div>
         </div>
 
@@ -38,6 +39,7 @@ export default function Home() {
           />
         </div>
       </main>
+      <PublicServices />
       <footer className="site-footer">
         <p className="footer-copy">
           &copy; {new Date().getFullYear()} Maryna Salamatina Cosmetology. All rights reserved.
